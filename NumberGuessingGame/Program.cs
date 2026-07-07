@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            NumberGuessing numberGuessing = new NumberGuessing();
+            numberGuessing.GenerateRandomNumber(1, 100);
         }
     }
 }
