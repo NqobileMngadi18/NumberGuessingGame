@@ -5,12 +5,29 @@
         static void Main(string[] args)
         {
             bool gameOver = false;
+            bool inputValid = false;
 
             while (!gameOver)
             {
                 int maximum = 0;
-                Console.WriteLine("What Difficulty would you like? (E), (M), (H)");
-                string difficulty = Console.ReadLine();
+                string difficulty = string.Empty;
+
+                while (!inputValid)
+                {
+                    Console.WriteLine("What Difficulty would you like? (E), (M), (H)");
+                    difficulty = Console.ReadLine();
+
+                    if((difficulty == "E") || (difficulty == "M") || (difficulty == "H"))
+                    { 
+                        inputValid = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please type (E), (M) OR (H)");
+                        inputValid = false;
+                    }
+                }
+                
 
                 if (difficulty == "E")
                 {
@@ -60,21 +77,34 @@
                     }
 
                 }
-                Console.WriteLine("Do you want to play again? (Y) or (N)");
-                string playAgain = Console.ReadLine();
-                playAgain = playAgain.ToUpper();
 
-                if((playAgain != "Y") || (playAgain != "N"))
+                inputValid = false;
+                string playAgain = string.Empty;
+
+                while(!inputValid)
                 {
-                    Console.WriteLine("Sudakwa apha");
+                    Console.WriteLine("Do you want to play again? (Y) or (N)");
+                    playAgain = Console.ReadLine();
+                    playAgain = playAgain.ToUpper();
+
+                    if ((playAgain == "Y") || (playAgain == "N"))
+                    {
+                        inputValid = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please type (Y) or (N)");
+                        inputValid = false;
+                    }
                 }
-                else if (playAgain == "Y")
-                {
-                    gameOver = false;
-                }
-                else
+
+                if(playAgain == "N")
                 {
                     gameOver = true;
+                }
+                else if(playAgain == "Y")
+                {
+                    gameOver = false;
                 }
             }
         }
