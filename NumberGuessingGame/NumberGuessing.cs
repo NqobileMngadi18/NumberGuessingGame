@@ -25,29 +25,25 @@ namespace NumberGuessingGame
             this.maximum = maximum;
         }
 
-        public GuessResult MakeGuess (int guess)
+        public GuessEnums MakeGuess (int guess)
         {
-<<<<<<< HEAD
             if (guess > maximum || guess <   minimum)
-=======
-            if (guess > maximum || guess < minimum)
->>>>>>> 9a46a08306706be9ef10d393b4b1a32e4a465812
             {
-                return GuessResult.OutOfLimits;
+                return GuessEnums.OutOfLimits;
             }
             else if (guess == numberToGuess)
             {
-                GuessResult result = GuessResult.Correct;
+                GuessEnums result = GuessEnums.Correct;
 
                 return result;
             }
             else if(guess < numberToGuess) 
             {
-                return GuessResult.TooLow;
+                return GuessEnums.TooLow;
             }
             else
             {
-                return GuessResult.TooHigh;
+                return GuessEnums.TooHigh;
             }
         }
     }
