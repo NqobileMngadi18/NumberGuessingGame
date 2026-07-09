@@ -8,6 +8,7 @@ namespace NumberGuessingGame
     {
         TooHigh,
         TooLow,
-        Correct
+        Correct,
+        OutOfLimits
     }
 }

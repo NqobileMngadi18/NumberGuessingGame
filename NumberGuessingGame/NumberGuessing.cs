@@ -11,6 +11,11 @@ namespace NumberGuessingGame
         int minimum = 0;
         int maximum = 0;
 
+        public NumberGuessing(int minimum, int maximum)
+        {
+            GenerateRandomNumber(minimum, maximum);
+        }
+
         public void GenerateRandomNumber(int minimum, int maximum)
         {
             Random rand = new Random();
@@ -22,21 +27,17 @@ namespace NumberGuessingGame
 
         public GuessResult MakeGuess (int guess)
         {
-            if (guess > maximum)
+            if (guess > maximum || guess <   minimum)
             {
                 return GuessResult.OutOfLimits;
             }
-            else if (guess < minimum)
-            {
-                return GuessResult.OutOfLimits;
-            }
-            if (guess == numberToGuess)
+            else if (guess == numberToGuess)
             {
                 GuessResult result = GuessResult.Correct;
 
                 return result;
             }
-            else if(guess < numberToGuess)
+            else if(guess < numberToGuess) 
             {
                 return GuessResult.TooLow;
             }
