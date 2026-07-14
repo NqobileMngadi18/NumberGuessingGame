@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+        //This class is a UI definition for the application
         static void Main(string[] args)
         {
             bool gameOver = false;
