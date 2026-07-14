@@ -27,11 +27,7 @@ namespace NumberGuessingGame
 
         public GuessResult MakeGuess (int guess)
         {
-<<<<<<< HEAD
             if (guess > maximum || guess <   minimum)
-=======
-            if (guess > maximum || guess < minimum)
->>>>>>> 9a46a08306706be9ef10d393b4b1a32e4a465812
             {
                 return GuessResult.OutOfLimits;
             }
